@@ -39,10 +39,7 @@ Key Features:
 |---------|------|---------|
 | `pretrain_t2t_mini.jsonl` | 1.27M | Pretraining (Next Token Prediction) |
 | `sft_t2t_mini.jsonl` | 895K | Supervised Fine-Tuning (7.43% with tool_calls) |
-| `dpo.jsonl` | 17K | DPO Preference Optimization |
-| `rlaif.jsonl` | 19K | RLAIF Reinforcement Learning |
 | `agent_rl.jsonl` | 40K | Agent RL General Tasks |
-| `agent_rl_math.jsonl` | 20K | Agent RL Math / Tool-Use |
 | `tool_eval_holdout.jsonl` | 1,000 | Tool-Calling Holdout Evaluation Set |
 
 ## Training Pipeline

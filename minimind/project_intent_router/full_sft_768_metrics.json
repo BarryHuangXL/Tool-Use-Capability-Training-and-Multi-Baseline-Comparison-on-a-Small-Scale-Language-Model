@@ -1,0 +1,2718 @@
+{
+  "summary": {
+    "holdout": "D:\\港科课程\\minimind_new\\minimind\\dataset\\tool_eval_holdout.jsonl",
+    "evaluated": 300,
+    "structure_valid_rate": 0.56,
+    "first_tool_name_accuracy": 0.5133333333333333,
+    "latency_mean_s": 2.351569350332332,
+    "latency_p50_s": 1.7361250999965705,
+    "device": "cpu",
+    "max_new_tokens": 256,
+    "temperature": 0.1,
+    "bad_cases_file": "D:\\港科课程\\minimind_new\\minimind\\project_intent_router\\full_sft_768_bad_cases.jsonl"
+  },
+  "details": [
+    {
+      "idx": 0,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.6892,
+      "raw_head": "I cannot directly compare the current weather in Tokyo and Paris, as these require live data and external tools that I do not have access to real-time weather data. Additionally, I cannot translate text into Spanish as I do not have the capability to translate text into Spanish. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 1,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4299,
+      "raw_head": "查询当前北京和上海的天气情况\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 2,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4905,
+      "raw_head": "The current time in New York is 10:00 AM in New York."
+    },
+    {
+      "idx": 3,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.9619,
+      "raw_head": "Convert 100 miles to kilometers using unit_converter.\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"miles\", \"to_unit\": \"km\"}}\n</tool_call>"
+    },
+    {
+      "idx": 4,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 8.284,
+      "raw_head": "Calculate the cost in USD if I buy 100 Euros worth of products with a current exchange rate and then check how many words are in this sentence \"The exchange rate is 1.10 USD per EUR\".\n\nI need to calculate the cost in USD if I buy 100 Euros worth of products with a current exchange rate and then check how many words are in this sentence \"The exchange rate is 1.10 USD per EUR\".\n\nI'll use the calculate_math tool to calculate the cost in USD if you buy 100 Euros worth of products with a current exch"
+    },
+    {
+      "idx": 5,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.5582,
+      "raw_head": "I cannot provide the current exchange rate from USD to EUR or translate the result into Japanese, as this requires real-time data and external tools. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 6,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.8979,
+      "raw_head": "查询当前北京时间\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 7,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 0.7066,
+      "raw_head": "I'll check the current weather in New York for you."
+    },
+    {
+      "idx": 8,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.981,
+      "raw_head": "先算345加237，再乘以1.5。\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"345 + 237 * 1.5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 9,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.7649,
+      "raw_head": "作为AI，我没有感知能力，无法实时获取当前气温。我的功能是提供信息和帮助，而非进行实时查询。如果您有任何问题，我随时愿意协助您。"
+    },
+    {
+      "idx": 10,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.0965,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 11,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 3.5592,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"kg\", \"to_unit\": \"pounds\"}}\n</tool_call>"
+    },
+    {
+      "idx": 12,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.7355,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 13,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 3.9169,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"What is the length of this sentence in characters and words and what is the result of 25 plus 15 multiplied by 2?\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 + 15 * 2\"}}\n</tool_call>"
+    },
+    {
+      "idx": 14,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2677,
+      "raw_head": "I cannot provide current weather information or calculate temperature changes. However, I can help you calculate the temperature changes if it increased by 10 degrees from the current value. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 15,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.1608,
+      "raw_head": "I cannot provide the current time in New York or translate \"good morning\" into Spanish, as it requires real-time data and access to live market information. Additionally, I cannot translate text into Spanish, as it requires access to a translation tool or APIs."
+    },
+    {
+      "idx": 16,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.1662,
+      "raw_head": "我无法直接获取当前时间或实时天气信息，也无法进行天气描述翻译。不过，我可以帮你查询北京的天气情况，并翻译天气描述成英文。是否需要我帮你翻译天气描述成英文？"
+    },
+    {
+      "idx": 17,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4441,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 18,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 10.776,
+      "raw_head": "北京的天气情况因地区而异，但北京当前的天气为晴天，气温在15℃到22℃之间。北京的天气较为温和，但北京的天气较为温和，适合外出活动。北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气较为温和，但北京的天气"
+    },
+    {
+      "idx": 19,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.403,
+      "raw_head": "我无法直接获取当前时间，也无法实时查询空气质量。不过，我可以帮你计算10加20再乘以3的结果。\n\n首先，10加20等于30。\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"10 + 20 * 3\"}}\n</tool_call>"
+    },
+    {
+      "idx": 20,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2447,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 21,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 11.5834,
+      "raw_head": "50乘以2.5再加上100的结果是：50×2.5+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 50+100 = 5"
+    },
+    {
+      "idx": 22,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.6155,
+      "raw_head": "I cannot provide the current weather in Tokyo or London, as these require live data and external tools that I do not have access to. Additionally, I cannot translate text into English or translate text to English. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 23,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.6138,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"200 * ((1 + 0.03)^10 - 1) / 0.03\"}}\n</tool_call>"
+    },
+    {
+      "idx": 24,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3301,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"今天天气真好\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 25,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3396,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 26,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4536,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 50, \"from_unit\": \"kg\", \"to_unit\": \"pounds\"}}\n</tool_call>"
+    },
+    {
+      "idx": 27,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.3087,
+      "raw_head": "I cannot provide the current weather in Tokyo or the exchange rate between the Japanese yen and the Euro, as these require real-time data access, which I do not have. However, I can help with the exchange rate calculation. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 28,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.1067,
+      "raw_head": "I cannot provide current weather information as it requires real-time data access. However, I can help you convert temperatures from Celsius to Fahrenheit.\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Tokyo\", \"num_results\": 3}}\n</tool_call>"
+    },
+    {
+      "idx": 29,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.698,
+      "raw_head": "I cannot provide the current weather in Paris or translate it into Spanish for you. I also cannot translate the weather report into Spanish as I do not have the capability to translate or translate text. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 30,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1937,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 31,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4607,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 32,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1676,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 33,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.2044,
+      "raw_head": "这段文字共有 **15个字** 和 **2个词**。"
+    },
+    {
+      "idx": 34,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.6198,
+      "raw_head": "Check the current time in New York using the get_current_time tool.\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 35,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.6417,
+      "raw_head": "根据前面的推理，**A是程序员**。  \n因此，**A负责编程工作**。"
+    },
+    {
+      "idx": 36,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.0257,
+      "raw_head": "I cannot directly compare the current weather in Tokyo and Paris, as these require live data and external tools that I do not have access to. Additionally, I cannot provide the latest exchange rate between the Japanese yen and the Euro, as these require live data and external tools that I do not have access to. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 37,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3586,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 38,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 11.7376,
+      "raw_head": "我帮你算一下：  \n“我今天天气好，我打算去公园散步，顺便看看花儿开得怎么样。”  \n“我今天天气好，我打算去公园散步，顺便看看花儿开得怎么样。”  \n\n需要我帮你算一下：  \n“我今天天气好，我打算去公园散步，顺便看看花儿开得怎么样。”  \n“我今天天气好，我打算去公园散步，顺便看看花儿开得怎么样。”  \n\n需要我帮你算一下：  \n“我今天天气好，我打算去公园散步，顺便看看花儿开得怎么样。”  \n“我今天天气好，我打算去公园散步，顺便看看花儿开得怎么样。”  \n\n需要我帮你算一下：  \n“我今天天气好，我打算去公园散步，顺便看看花儿开得怎么样。”  \n“我今天天气好，我打算去公园散步，顺便看看花儿开得怎么样。”  \n\n需要"
+    },
+    {
+      "idx": 39,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.3201,
+      "raw_head": "北京现在的温度是15°C，湿度是58%，风速3级。  \n现在的温度是多少呢？"
+    },
+    {
+      "idx": 40,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.1852,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 0, \"max\": 30}}\n</tool_call>"
+    },
+    {
+      "idx": 41,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1063,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"How many characters and words are in this sentence?\"}}\n</tool_call>"
+    },
+    {
+      "idx": 42,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.1867,
+      "raw_head": "今天天气真好，我们一起去公园散步吧。"
+    },
+    {
+      "idx": 43,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 3.4597,
+      "raw_head": "查询北京和上海的当前天气情况\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"北京\", \"to_currency\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"北京今天天气晴朗，气温在15°C到22°C之间，湿度在60%\"}}\n</tool_call>"
+    },
+    {
+      "idx": 44,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.1088,
+      "raw_head": "查询北京当前气温并换算成华氏度后再查询人民币对美元的汇率\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 45,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3681,
+      "raw_head": "查询北京当前天气及是否下雨\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 46,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3212,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"spanish\"}}\n</tool_call>"
+    },
+    {
+      "idx": 47,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 9.9497,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"人工智能（AI）是计算机科学的一个分支，旨在开发能够执行通常需要人类智能的任务的计算机系统。它涉及机器学习、深度学习、自然语言处理、计算机视觉等技术。\"}}\n\n翻译的中文文章：人工智能（AI）是计算机科学的一个分支，旨在开发能够执行通常需要人类智能的任务的计算机系统。它涉及机器学习、深度学习、自然语言处理、计算机视觉等技术。\n\n翻译的字符数：约1000个字符（包括标点符号）。\n\n查找最新的AI发展新闻：人工智能（AI）是计算机科学的一个分支，旨在开发能够执行通常需要人类智能的任务的计算机系统。它涉及机器学习、深度学习、自然语言处理、计算机视觉等技术。\n\n翻译的字符数：约1000个字符（包括标点符号）。\n\n查找最新的AI发展新闻：人工智能（AI）是计算机科学的一个分支，旨在开发能够执行通常需要人类智能的任务的计算机系统。它涉及机器学习、深度学习、自然语言处理、计算机视觉等技术。\n\n翻译的字符数：约1000个字符（包括标点符号）。\n\n查找最新的AI"
+    },
+    {
+      "idx": 48,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4156,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 49,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 3.1828,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog.\", \"target_language\": \"chinese\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog.\"}}\n</tool_call>"
+    },
+    {
+      "idx": 50,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.936,
+      "raw_head": "查询北京当前天气、人民币对美元汇率及人民币对美元汇率\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 51,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.3442,
+      "raw_head": "I cannot provide real-time data or current weather information. However, I can help you with the latest weather information. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 52,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 11.0648,
+      "raw_head": "比特币最近的行情显示是比特币的价格波动，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇率是挺大的，但我觉得它和人民币的兑换汇"
+    },
+    {
+      "idx": 53,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.0767,
+      "raw_head": "I cannot provide the current weather in New York or the exchange rate from USD to EUR as I do not have access to real-time data or external tools. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 54,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.8589,
+      "raw_head": "查询北京和上海的天气情况\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 55,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.932,
+      "raw_head": "I cannot provide current weather information or calculate temperature differences between London and New York. However, I can help you calculate the temperature difference between London and New York if you'd like. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 56,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5034,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"spanish\"}}\n</tool_call>"
+    },
+    {
+      "idx": 57,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.666,
+      "raw_head": "我无法直接获取当前时间，也无法实时获取当前时间。不过，我可以帮你计算北京的天气状况。\n\n关于北京的天气状况，我无法提供实时天气信息，因为我没有访问实时数据源的权限。\n\n如果你能提供具体的天气状况，我可以帮你计算。是否需要我帮你计算？"
+    },
+    {
+      "idx": 58,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1401,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 59,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.916,
+      "raw_head": "I cannot provide the current time or the character count of the sentence in real-time, as this requires real-time data access. However, I can help you with the exchange rate calculation. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 60,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2177,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 61,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2105,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 62,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4428,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"spanish\"}}\n</tool_call>"
+    },
+    {
+      "idx": 63,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2447,
+      "raw_head": "I cannot provide the current exchange rate between USD and EUR as it requires real-time data and a financial service. However, I can help you calculate the amount in EUR after applying a 5% transaction fee if you'd like. Let me know how you'd like to proceed!"
+    },
+    {
+      "idx": 64,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 2.1973,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 65,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 3.3092,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 1, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"北京和上海的气温相比，略高，但北京和上海的气温差异明显。\"}}\n</tool_call>"
+    },
+    {
+      "idx": 66,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.5798,
+      "raw_head": "I cannot provide the current weather in Tokyo or the temperature conversion from Celsius to Fahrenheit using the latest data available online. These tasks require external services or APIs, which I do not have access to. Additionally, I cannot perform weather information or convert temperatures.\n\nI cannot fetch the latest weather data or check a weather service for this request. Please let me know if you'd like help with something else."
+    },
+    {
+      "idx": 67,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1473,
+      "raw_head": "计算句子中字数。\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天北京的天气如何\"}}\n</tool_call>"
+    },
+    {
+      "idx": 68,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.4527,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"北京现在的天气怎么样 顺便帮我算一下我写的这段文字有多少个字\"}}\n</tool_call>"
+    },
+    {
+      "idx": 69,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.2465,
+      "raw_head": "100公里等于62英里。"
+    },
+    {
+      "idx": 70,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3343,
+      "raw_head": "先计算5乘以4，再加10。\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"5 * 4 + 10\"}}\n</tool_call>"
+    },
+    {
+      "idx": 71,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 3.2395,
+      "raw_head": "I'll check the current weather in New York shows 25 degrees Celsius. Since I don't have real-time data, I'll use the weather tool for this.\n\nI'll use the weather tool for this.\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 25, \"from_unit\": \"fahrenheit\", \"to_unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 72,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2119,
+      "raw_head": "查询今天北京的天气情况\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 73,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.0729,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 74,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.9872,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"Can you translate this sentence from English to French and also tell me how many words it contains?\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"Can you translate this sentence from English to French and also tell me how many words it contains?\"}}\n</tool_call>"
+    },
+    {
+      "idx": 75,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2853,
+      "raw_head": "我无法直接获取当前时间，但可以告诉你，我的工作时长是根据任务的复杂程度来确定的。如果你需要具体的时间，可以告诉我，我可以帮你计算。"
+    },
+    {
+      "idx": 76,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.1862,
+      "raw_head": "边长为7厘米的正方形边长为7厘米，因此面积为7厘米。面积为7×7=36平方厘米。"
+    },
+    {
+      "idx": 77,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.347,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 78,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.1395,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 1, \"max\": 100}}\n</tool_call>"
+    },
+    {
+      "idx": 79,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.4545,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"请问现在的时间是多少 以及我刚刚写的一段文字有多少个字符和单词\"}}\n</tool_call>"
+    },
+    {
+      "idx": 80,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.0602,
+      "raw_head": "I need to calculate the temperature in New York, then add 10 degrees to it, then add 10 degrees to it.\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 81,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1905,
+      "raw_head": "查询北京当前天气状况\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 82,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.0835,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 83,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2453,
+      "raw_head": "我无法提供实时汇率数据，但可以告诉你，美元对人民币的汇率受多种因素影响，包括市场供需、经济数据、政策变化等。建议你通过银行、外汇平台或金融平台查询最新汇率。"
+    },
+    {
+      "idx": 84,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4578,
+      "raw_head": "Multiply 3 by 4, then add 5 squared.\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"3 * 4 + 5 * 5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 85,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.1515,
+      "raw_head": "I cannot provide the current weather in Tokyo or the cost in USD, as this requires real-time data access. However, I can help you convert 500 Japanese Yen to USD if you provide the exchange rate. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 86,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 0.8686,
+      "raw_head": "10乘以2.5等于15。"
+    },
+    {
+      "idx": 87,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.3296,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 + 15 * 2\"}}\n</tool_call>"
+    },
+    {
+      "idx": 88,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.0901,
+      "raw_head": "我无法直接查询实时新闻或获取最新气候变化新闻，也无法进行国际间的天气数据查询。因此，我无法完成以下任务：\n\n1. 翻译新闻内容。\n2. 翻译新闻内容。\n3. 计算气候变化影响（如极端天气事件）。\n4. 统计气候变化影响（如极端天气事件）。\n\n请提供具体新闻内容，以便我协助您完成任务。"
+    },
+    {
+      "idx": 89,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4006,
+      "raw_head": "I cannot provide the current temperature in Paris or generate random numbers directly. However, I can help you with the conversion and weather conditions. Let me know if you'd like help with something else!"
+    },
+    {
+      "idx": 90,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 3.69,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 3000, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 3000, \"from_unit\": \"miles\", \"to_unit\": \"km\"}}\n</tool_call>"
+    },
+    {
+      "idx": 91,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1371,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 92,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 10.8623,
+      "raw_head": "我无法提供实时时间信息，但可以告诉你，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023年10月5日，北京时间是2023"
+    },
+    {
+      "idx": 93,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.1271,
+      "raw_head": "The current time in New York is not available here. It is a time zone that can be checked in the real world, but it can be a time-based and not a real world. For example, it is a time zone that can be checked in the real world, but it can be a time-based and not a real world."
+    },
+    {
+      "idx": 94,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5016,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 95,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2586,
+      "raw_head": "I cannot provide the current time in New York or convert 50 kilometers to miles as I do not have access to real-time data or external tools. However, I can help with the conversion of 100 USD to miles. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 96,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.497,
+      "raw_head": "北京今天的天气是晴天，气温在15℃到22℃之间，湿度在60%左右，风速在10公里/小时左右。你最近有没有什么想了解的？"
+    },
+    {
+      "idx": 97,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.27,
+      "raw_head": "我无法直接查询实时天气信息或获取最新的科技新闻。因此，我无法提供北京当前的天气情况或最新的科技新闻。\n\n不过，我可以帮助你完成以下任务：\n1. 获取北京的当前天气情况。\n2. 获取最新的科技新闻。\n\n请提供具体的信息或问题，以便我更好地协助你。"
+    },
+    {
+      "idx": 98,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.4094,
+      "raw_head": "作为AI，我没有个人经历，但能理解用户可能面临的挑战。我的核心能力是高效处理信息、精准解答问题，始终以技术赋能智慧，助力用户高效达成目标。"
+    },
+    {
+      "idx": 99,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.7402,
+      "raw_head": "我作为AI模型没有实际的时间，但可以提供健康饮食的建议。您可以告诉我您想了解的具体饮食需求，我会尽力提供相关建议。"
+    },
+    {
+      "idx": 100,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.02,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"2022-03-15\"}}\n</tool_call>"
+    },
+    {
+      "idx": 101,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.9127,
+      "raw_head": "查询当前人民币对美元的汇率\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"CNY\", \"to_currency\": \"USD\"}}\n</tool_call>"
+    },
+    {
+      "idx": 102,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2048,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 103,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.9846,
+      "raw_head": "The current weather in New York is not available here. The weather is affecting the weather, but it can be affected by humidity and affection. For example, it's a season of time and time, but it can be affected by humidity and affection."
+    },
+    {
+      "idx": 104,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.011,
+      "raw_head": "我无法直接获取最新的科技新闻数据，也无法进行数学计算。不过，我可以帮你完成以下操作：\n\n1. 将英尺转换为米。\n2. 计算英尺与米之间的数学关系。\n\n请提供具体的数值，我将帮你计算。"
+    },
+    {
+      "idx": 105,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.0957,
+      "raw_head": "Convert 100 km to miles using unit_converter.\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 106,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5136,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 107,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 10.073,
+      "raw_head": "The current weather in Tokyo is not available here. For the current weather in Tokyo, it is not available here. For the current weather in Tokyo, it is not available here. For the current weather in Tokyo, it is not available here. For the current weather in Tokyo, it is not available here. For the current weather in Tokyo, it is not available here. For the current weather in Tokyo, it is not available here. For the current weather in Tokyo, it is not available here. For the current weather in T"
+    },
+    {
+      "idx": 108,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5427,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 50, \"from_unit\": \"kg\", \"to_unit\": \"pounds\"}}\n</tool_call>"
+    },
+    {
+      "idx": 109,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.6419,
+      "raw_head": "查询北京当前天气并转换温度为华氏度\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 110,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.1206,
+      "raw_head": "Convert 100 miles to kilometers using unit_converter.\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"miles\", \"to_unit\": \"km\"}}\n</tool_call>"
+    },
+    {
+      "idx": 111,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4446,
+      "raw_head": "The current time in New York is **UTC-5** (EST)."
+    },
+    {
+      "idx": 112,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.6642,
+      "raw_head": "将100公里转换为英里\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 113,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2995,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"spanish\"}}\n</tool_call>"
+    },
+    {
+      "idx": 114,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.3347,
+      "raw_head": "50公斤等于约6.5磅。"
+    },
+    {
+      "idx": 115,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.186,
+      "raw_head": "计算这句话的字数。\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"人工智能会取代人类工作吗\"}}\n</tool_call>"
+    },
+    {
+      "idx": 116,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.0014,
+      "raw_head": "要计算房间的体积，可以使用公式：\n\n$$\n\\text{体积} = \\text{面积} \\times \\text{高度}\n$$\n\n已知面积是 12 平方米，高度是 3 米，代入公式：\n\n$$\n\\text{体积} = 12 \\times 3 = 36 \\text{ 立方米}\n$$\n\n因此，这个房间的体积是 **36 立方米**。"
+    },
+    {
+      "idx": 117,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1161,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 118,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 5.9214,
+      "raw_head": "I cannot provide the current weather in New York or calculate the sum of 15 and 20 directly, as these require live data and external tools. However, I can help with the calculation:\n\n1. **Current weather in New York**: I cannot provide the current weather in New York as it requires real-time weather data.\n2. **Exchange rate between USD and EUR**: I cannot provide the current exchange rate between USD and EUR, as these require live data.\n3. **Convert 15 to characters**: I cannot calculate the sum"
+    },
+    {
+      "idx": 119,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.47,
+      "raw_head": "The sentence \"The quick brown fox jumps over the lazy dog\" contains 2 words."
+    },
+    {
+      "idx": 120,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1376,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"35 * 2.5 - 10\"}}\n</tool_call>"
+    },
+    {
+      "idx": 121,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.3908,
+      "raw_head": "I cannot provide the current weather in New York or translate it into Spanish as I do not have the capability to translate or translate text. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 122,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 9.0253,
+      "raw_head": "现在北京的时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年10月15日，北京时间是2023年"
+    },
+    {
+      "idx": 123,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.5243,
+      "raw_head": "我无法提供实时时间，但可以为你推荐一些有趣的电影或书籍，比如《奥本海默》《沙丘2》等，你感兴趣的话可以告诉我哦！"
+    },
+    {
+      "idx": 124,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5546,
+      "raw_head": "Multiply 25 by 3, then subtract 10.\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 * 3 - 10\"}}\n</tool_call>"
+    },
+    {
+      "idx": 125,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.5482,
+      "raw_head": "The sentence \"How many characters and words are in this sentence?\" contains **26 characters** and **3 words**."
+    },
+    {
+      "idx": 126,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.2737,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 + 15 * 2\"}}\n</tool_call>"
+    },
+    {
+      "idx": 127,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2847,
+      "raw_head": "I cannot provide the current weather in New York or convert 25 degrees Celsius to Fahrenheit directly, as these require live data and external tools that I do not have access to. Additionally, I cannot perform calculations or perform calculations. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 128,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.7889,
+      "raw_head": "I cannot provide the current time in New York or the current exchange rate between USD and EUR directly, as these require real-time data access. However, I can help you with the exchange rate calculation. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 129,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.656,
+      "raw_head": "I cannot provide real-time weather data or current exchange rates. However, I can help you find the exchange rate between USD and EUR if you'd like. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 130,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2978,
+      "raw_head": "计算这段文字的字数。\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天天气很好，适合出去玩。\"}}\n</tool_call>"
+    },
+    {
+      "idx": 131,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.7445,
+      "raw_head": "查询北京当前天气并计算明天穿衣建议的适宜温度范围\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 132,
+      "gold_first_name": "text_length",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 2.42,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"人民币对美元的实时汇率\"}}\n</tool_call>"
+    },
+    {
+      "idx": 133,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 2.1595,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 134,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.9001,
+      "raw_head": "AI可通过天气预报、气象数据和气象数据，计算未来气温和气温，并生成符合条件的天气预报。"
+    },
+    {
+      "idx": 135,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.1183,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 * 3 + 10\"}}\n</tool_call>"
+    },
+    {
+      "idx": 136,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3659,
+      "raw_head": "查询当前北京时间\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 137,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3313,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 138,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.0019,
+      "raw_head": "美元对人民币的汇率受多种因素影响，包括经济数据、政策变化、市场供需等。当前美元对人民币的汇率约为1美元 = 7.2人民币，但具体数值可能因市场波动而变化。建议关注实时汇率或银行官网获取最新数据。"
+    },
+    {
+      "idx": 139,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 3.0228,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"What is the current exchange rate between USD and EUR and how many characters are in this sentence?\"}}\n</tool_call>"
+    },
+    {
+      "idx": 140,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.566,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 141,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.2103,
+      "raw_head": "我无法直接查询实时天气信息或翻译文本，也无法进行翻译。不过，我可以帮你查询巴黎和东京的当前天气情况，并翻译成英文。\n\n首先，我需要你提供具体的天气信息，例如当前温度、天气状况（晴、雨、雪等）。然后我可以帮你翻译成英文。\n\n请提供你想查询的城市或地区，以便我能准确翻译。\n\n请将你的需求补充出来，我会尽力协助你。"
+    },
+    {
+      "idx": 142,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4338,
+      "raw_head": "查询北京当前天气并翻译成英文\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 143,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.225,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 144,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.8663,
+      "raw_head": "我无法直接获取当前时间，也无法实时查询天气信息。不过，我可以帮你计算数学表达式：  \n\n**数学表达式**：  \n$$\n\\text{数学表达式} = \\text{(\\text{天气} + 10\\text{度})} + \\text{天气} + \\text{温度}\n$$  \n\n如果你提供具体的数值，我可以帮你计算。是否需要我帮你计算？"
+    },
+    {
+      "idx": 145,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.9019,
+      "raw_head": "我无法直接选择时间，但可以为你推荐一些有趣的活动建议：比如去公园散步、看电影、听音乐、看电影，或者参加一个户外活动。你想了解哪个时间段最适合你？"
+    },
+    {
+      "idx": 146,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.8655,
+      "raw_head": "I cannot provide current weather information or calculate the result of 25 plus 15 multiplied by 2. This is a simple example of how to calculate the result of 25 plus 15 multiplied by 2.\n\nFirst, I'll compute the mathematical expression: 25 + 15 * 2.\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 147,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2063,
+      "raw_head": "查询北京当前天气状况\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 148,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2423,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"我今年25岁住在北京海淀区\"}}\n</tool_call>"
+    },
+    {
+      "idx": 149,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.95,
+      "raw_head": "I cannot directly fetch real-time data or perform calculations directly. However, I can help with that if you'd like, I can help with that. Let me know how you'd like to proceed!"
+    },
+    {
+      "idx": 150,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.0175,
+      "raw_head": "I cannot provide current weather information or convert temperatures from Celsius to Fahrenheit, as these require live data and external tools that I do not have access to. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 151,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4498,
+      "raw_head": "这段文字共有10个字，包括标点符号和标点符号。"
+    },
+    {
+      "idx": 152,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.681,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 153,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1599,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 + 30 * 4\"}}\n</tool_call>"
+    },
+    {
+      "idx": 154,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.7226,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 50, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"50 * 300 / 4\"}}\n</tool_call>"
+    },
+    {
+      "idx": 155,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1246,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 156,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4451,
+      "raw_head": "我无法提供实时数据，但可以告诉你北京当前的气温。"
+    },
+    {
+      "idx": 157,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1109,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 158,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.0468,
+      "raw_head": "I cannot provide the current temperature in New York or the temperature conversion to Fahrenheit using the current weather data. However, I can help you calculate the temperature in Fahrenheit using the current weather data. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 159,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.7285,
+      "raw_head": "I cannot provide the current weather in Paris or translate it into Spanish for you. I also cannot translate text into Spanish as I do not have the capability to translate text or translate text. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 160,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1694,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 161,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.8728,
+      "raw_head": "将100公斤转换为磅\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"kg\", \"to_unit\": \"pounds\"}}\n</tool_call>"
+    },
+    {
+      "idx": 162,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.2306,
+      "raw_head": "100公里等于约6.14英里。"
+    },
+    {
+      "idx": 163,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 4.2828,
+      "raw_head": "在简化表达中保持真实情感，需关注物品的实际价值与情感表达。若物品价值高，需在表达中体现真诚与关怀，避免刻意迎合。同时，需注意物品的实际价值，避免过度简化导致情感波动。最终，真实情感源于内心的真诚与真实，需在表达中保持真诚与关怀，确保情感的真诚与真实。"
+    },
+    {
+      "idx": 164,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4948,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"miles\", \"to_unit\": \"km\"}}\n</tool_call>"
+    },
+    {
+      "idx": 165,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.9692,
+      "raw_head": "The current weather in Tokyo isn't a tool, so it's a good idea to check a weather service."
+    },
+    {
+      "idx": 166,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2051,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 167,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.6889,
+      "raw_head": "我无法直接获取当前时间，也无法直接查询天气信息或生成随机数。不过，我可以帮你查询北京的天气，然后随机生成一个1到100的数，再统计这段英文翻译成中文。\n\n请提供你希望查询的城市名称，我将为你生成随机数。"
+    },
+    {
+      "idx": 168,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.4338,
+      "raw_head": "I cannot provide the current weather in Paris today or the temperature conversion of London's weather in terms of temperature and humidity. These functions are not directly accessible to weather information. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 169,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 9.9474,
+      "raw_head": "我无法直接获取当前时间，也无法进行数学计算。不过，我可以帮你计算数学表达式：25 + 15 ÷ 2。  \n\n计算：25 + 15 ÷ 2 = 25 + 15 ÷ 2 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + 10 = 25 + "
+    },
+    {
+      "idx": 170,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.1196,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 0, \"max\": 100}}\n</tool_call>"
+    },
+    {
+      "idx": 171,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.9926,
+      "raw_head": "北京现在是早上9点，天气晴朗，适合外出活动！想看看北京的天气怎么样？"
+    },
+    {
+      "idx": 172,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4785,
+      "raw_head": "The sentence \"The weather today is sunny with a high of 25 degrees\" contains 25 characters."
+    },
+    {
+      "idx": 173,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3627,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 174,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.51,
+      "raw_head": "I cannot directly retrieve the current temperature in New York or convert temperatures directly, as this requires real-time data and external data sources. However, I can help with the calculation or calculate the sum of 25 and the converted temperatures. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 175,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.5594,
+      "raw_head": "I cannot provide the current weather in New York or the current time in Celsius, as this requires real-time data and time zones. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 176,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 0.9994,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天北京的天气怎么样\"}}\n</tool_call>"
+    },
+    {
+      "idx": 177,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2567,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 178,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 10.8995,
+      "raw_head": "The current weather in New York City today is partly cloudy with a temperature of 15°C. The humidity level is around 25°C, and the humidity level is around 25°C. The humidity level is around 25°C. The humidity level is around 25°C. The humidity level is around 25°C. The humidity level is around 25°C. The humidity level is around 25°C. The humidity level is around 25°C. The humidity level is around 25°C. The humidity level is around 25°C. The humidity level is around 25°C. The humidity level is a"
+    },
+    {
+      "idx": 179,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.7187,
+      "raw_head": "Translate \"今天天气很好\" into French.\n<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"今天天气很好\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 180,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.3213,
+      "raw_head": "100公里等于62.1371英里。"
+    },
+    {
+      "idx": 181,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.2262,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"现在是什么时间 请告诉我这句话有多少个汉字\"}}\n</tool_call>"
+    },
+    {
+      "idx": 182,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5573,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 183,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.3142,
+      "raw_head": "Sure! Here's the translation: \"I have a travel documents. I need it for my travel documents.\"\n\nTranslation into French: \"Je l'need pour mon passeport.\"\n\nPlease note that the translation is not possible to be a translation, so it's possible that I can't provide the translation."
+    },
+    {
+      "idx": 184,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.2957,
+      "raw_head": "今天天气真好，适合出门散步。\n\n这个句子的字符数是3，单词数是2。"
+    },
+    {
+      "idx": 185,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.485,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 186,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4198,
+      "raw_head": "35 plus 24 minus 18 divided by 6 is 80."
+    },
+    {
+      "idx": 187,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1973,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 188,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.9116,
+      "raw_head": "查询北京当前天气并转换成华氏度\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 189,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.0046,
+      "raw_head": "I cannot provide current weather conditions in Tokyo or Paris, as these require live data and real-time data. However, I can help you with the exchange rate or provide a general rate if you'd like. Let me know how you'd like to proceed!"
+    },
+    {
+      "idx": 190,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2317,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 191,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4817,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 192,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.593,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\"}}\n</tool_call>"
+    },
+    {
+      "idx": 193,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.6221,
+      "raw_head": "查询北京当前天气并转换温度为华氏度\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 194,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1621,
+      "raw_head": "计算这句话的字数。\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天天气真好\"}}\n</tool_call>"
+    },
+    {
+      "idx": 195,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5376,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 196,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.2996,
+      "raw_head": "15乘以8再减去30的结果是35。"
+    },
+    {
+      "idx": 197,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.1724,
+      "raw_head": "I cannot provide the current weather in New York or calculate the number of characters in the sentence given. Let me know if you'd like me to assist with something else."
+    },
+    {
+      "idx": 198,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2184,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 199,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5963,
+      "raw_head": "获取当前时间并计算加上270分钟的时间\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 200,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4124,
+      "raw_head": "Multiply 25 by 3, then subtract 10.\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 * 3 - 10\"}}\n</tool_call>"
+    },
+    {
+      "idx": 201,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.15,
+      "raw_head": "翻译句子为英文\n<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"明天北京天气如何\"}}\n</tool_call>"
+    },
+    {
+      "idx": 202,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.8792,
+      "raw_head": "I cannot provide the current weather in Tokyo or the latest tech news as it requires real-time data and access to weather services. However, I can help with other tasks if you'd like. Let me know how I can assist!"
+    },
+    {
+      "idx": 203,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 1.7804,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_currency\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 204,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1567,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"200 * 10/5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 205,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 5.6851,
+      "raw_head": "根据对话内容，我们可以得出以下结论：\n1. 该企业的销售额增长了多少？\n2. 该企业的销售额增长了多少？\n3. 该企业的销售额增长了多少？\n4. 该企业的销售额增长了多少？\n5. 该企业的销售额增长了多少？\n6. 该企业的财务状况如何？\n7. 该企业的财务状况如何？\n8. 该企业的财务状况如何？\n9. 该企业的财务状况如何？\n10. 该企业的财务状况如何？\n\n根据以上分析，该企业的财务状况良好，但需要进一步的财务分析和市场分析。"
+    },
+    {
+      "idx": 206,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.3724,
+      "raw_head": "我无法直接提供当前天气信息，但可以告诉您，我无法提供当前天气信息。如果您需要了解当前天气情况，建议您查看天气预报网站或使用天气应用获取最新信息。"
+    },
+    {
+      "idx": 207,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.0842,
+      "raw_head": "I cannot provide the current time or the exact time in 3 hours using the time or unit conversion tools, as these require live data and external tools that I do not have access to. Additionally, I cannot perform calculations or perform calculations directly.\n\nIf you'd like, I can help with something else, such as calculating the time or time zone information. Let me know how I can assist!"
+    },
+    {
+      "idx": 208,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.2766,
+      "raw_head": "目前人民币对美元的汇率是1美元 ≈ 7.2人民币，但具体数值可能因市场波动而变化。需要我帮你查询实时汇率吗？"
+    },
+    {
+      "idx": 209,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.7691,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 210,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.7766,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"miles\", \"to_unit\": \"km\"}}\n</tool_call>"
+    },
+    {
+      "idx": 211,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.6351,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Beijing\"}}\n</tool_call>"
+    },
+    {
+      "idx": 212,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 8.5243,
+      "raw_head": "100 kilograms to pounds is approximately 2.20462 pounds. This is because we can use the conversion factor to convert units to pounds. For example, 1 kilogram = 1.60934 pounds (1 kg = 0.621371 lbs).\n\n然而，这种能力可能带来隐私和伦理问题，例如，如果人类能够更深入地理解意识的本质，或许会更依赖技术来控制其行为。此外，过度依赖技术可能削弱对现实的理解，导致对意识本质的误解。\n\n总的来说，智能眼镜的自我意识是人类认知能力的体现，但无法完全替代人类对意识本质的理解。人类的自我意识源于对意识本质的觉察，而智能眼镜的自我意识是人类认知能力的体现。"
+    },
+    {
+      "idx": 213,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 2.4793,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"50 + 30 * 2\", \"target_language\": \"french\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"50 + 30 * 2\"}}\n</tool_call>"
+    },
+    {
+      "idx": 214,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.7471,
+      "raw_head": "我需要计算每天存100元，年利率3%复利，一年后总金额。首先，我知道一年有365天，所以一年的总金额是100元/天 × 365天 = 36,500元。\n\n接下来，我将计算一年后总金额。\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"100 * 365\"}}\n</tool_call>"
+    },
+    {
+      "idx": 215,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5654,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"miles\", \"to_unit\": \"km\"}}\n</tool_call>"
+    },
+    {
+      "idx": 216,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 1.5385,
+      "raw_head": "查询今天北京的天气情况并获取当前时间\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 217,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.4318,
+      "raw_head": "I cannot provide the current exchange rate from USD to EUR or how many liters are in 10 US gallons, as these require liters to check the latest exchange rate. However, I can help you calculate the number of liters in 10 US gallons. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 218,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.6325,
+      "raw_head": "Multiply 35 by 12, then subtract 45 divided by 5.\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"35 * 12 - 45 / 5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 219,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 0.8992,
+      "raw_head": "我无法提供实时时间信息，因为我的功能限制。"
+    },
+    {
+      "idx": 220,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 4.0095,
+      "raw_head": "查询北京当前温度并计算美元对美元汇率\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"Celsius\", \"to_currency\": \"Celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"北京现在的温度是多少度 Celsius 转换为华氏度是多少 顺便查询人民币对美元的汇率是多少\"}}\n</tool_call>"
+    },
+    {
+      "idx": 221,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.8366,
+      "raw_head": "将100公里转换为英里\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 222,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.2117,
+      "raw_head": "100公里等于62.1371英里。"
+    },
+    {
+      "idx": 223,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 2.9444,
+      "raw_head": "查询北京当前天气温度并转换成华氏度\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 1, \"max\": 100}}\n</tool_call>"
+    },
+    {
+      "idx": 224,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1795,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 + 30 - 15 / 5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 225,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2813,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"今天天气很好\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 226,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.1136,
+      "raw_head": "I cannot directly fetch the current time in New York or calculate 50 kilometers as it requires real-time data. However, I can help with the calculation or calculate calculations. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 227,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.0132,
+      "raw_head": "100公斤等于220磅。"
+    },
+    {
+      "idx": 228,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.2963,
+      "raw_head": "当前时间是2023年10月5日，星期日。  \n我为您计算：  \n300个单词。  \n\n（注：此处为示例，实际文字长度需根据实际情况调整。）"
+    },
+    {
+      "idx": 229,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.8011,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog.\", \"target_language\": \"chinese\"}}\n</tool_call>"
+    },
+    {
+      "idx": 230,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 10.348,
+      "raw_head": "The current weather in New York City is not available in the real-time weather, but it can be affected by many people's weather. For example, it's a season of warmth and warmth, but it can be affected by many people's weather. For example, it's a season of warmth and warmth, but it can be affected by many people's weather. For example, it's a season of warmth and warmth, but it can be affected by many people's weather. For example, it's a season of warmth and warmth, but it can be affected by ma"
+    },
+    {
+      "idx": 231,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2712,
+      "raw_head": "I cannot directly retrieve the current time or weather in New York directly, as these require live data and external tools that I do not have access to. Additionally, I cannot generate random numbers or access external tools to perform these tasks. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 232,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5207,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 233,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 1.2896,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"timezone\": \"fahrenheit\"}}\n</tool_call>"
+    },
+    {
+      "idx": 234,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.388,
+      "raw_head": "先计算25乘以18，再减去30。\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 * 18 - 30\"}}\n</tool_call>"
+    },
+    {
+      "idx": 235,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.715,
+      "raw_head": "我无法直接查询实时天气信息或进行天气查询，因为这需要联网访问天气API。不过，我可以帮你查询北京的天气情况。\n\n关于温度换算，我目前无法直接获取当前天气数据，但你可以通过天气应用或网站（如Weather.com、AccuWeather等）查询北京的当前天气情况。\n\n如果你需要我帮你查询天气，请告诉我，我可以帮你查询。"
+    },
+    {
+      "idx": 236,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.8982,
+      "raw_head": "100 miles is approximately **1 mile** (1 mile ≈ 0.621371 miles)。"
+    },
+    {
+      "idx": 237,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4492,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 238,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.3673,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"15 * 23 / 5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 239,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5186,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 240,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.3009,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 241,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.094,
+      "raw_head": "3小时后行驶了3公里。"
+    },
+    {
+      "idx": 242,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.8673,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"500美元兑换成欧元\", \"target_language\": \"chinese\"}}\n</tool_call>"
+    },
+    {
+      "idx": 243,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4126,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"spanish\"}}\n</tool_call>"
+    },
+    {
+      "idx": 244,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.7177,
+      "raw_head": "将100公里转换为英里\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 245,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.3654,
+      "raw_head": "我无法直接查询实时天气信息，也无法进行单位换算。不过，我可以帮你完成以下操作：\n\n1. 获取北京的当前天气情况。\n2. 计算当前气温（摄氏度）换算成华氏度。\n3. 计算随机数（摄氏度）乘以100/5 + 32。\n\n请提供具体的天气信息，以便我协助你完成。"
+    },
+    {
+      "idx": 246,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2045,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"256 / 16 * 3 + 10\"}}\n</tool_call>"
+    },
+    {
+      "idx": 247,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.9343,
+      "raw_head": "目前，全球约有100,000人使用咖啡因作为睡眠辅助工具，但其影响因人而异。若长期暴露于咖啡因，可能影响睡眠质量，甚至影响睡眠质量。建议通过健康饮食、适量运动、避免咖啡因摄入等方式管理。若长期暴露于咖啡因，可咨询专业医生。"
+    },
+    {
+      "idx": 248,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1916,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 + 30 - 15 / 5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 249,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 1.5418,
+      "raw_head": "查询当前时间并转换成摄氏度\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 250,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2794,
+      "raw_head": "查询当前北京时间\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 251,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 10.8339,
+      "raw_head": "“今天北京的天气如何”这句话一共有25个字，25个字，4个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5个字，5"
+    },
+    {
+      "idx": 252,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1411,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 253,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.311,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"34 * 17 - 56\"}}\n</tool_call>"
+    },
+    {
+      "idx": 254,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.3213,
+      "raw_head": "I don't have access to real-time weather data or current weather information. However, I can tell you that the current weather in Tokyo is not available in Tokyo, but I can provide general information about weather patterns and suggest checking a weather service."
+    },
+    {
+      "idx": 255,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4292,
+      "raw_head": "先计算30乘以25，再除以5。\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"30 * 25 / 5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 256,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2871,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 257,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.047,
+      "raw_head": "I cannot provide the current exchange rate between the US dollar and the euro as it requires real-time data access. However, I can help with the translation of a typical travel budget from English to Spanish. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 258,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5896,
+      "raw_head": "Multiply 34 by 17, then subtract 56.\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"34 * 17 - 56\"}}\n</tool_call>"
+    },
+    {
+      "idx": 259,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.6905,
+      "raw_head": "查询北京当前天气并转换温度为华氏度\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 260,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.8498,
+      "raw_head": "将100公里转换为英里\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 261,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.541,
+      "raw_head": "I cannot provide current weather information or exchange rate information. However, I can help you find the latest exchange rate between the Japanese yen and the Euro. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 262,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4968,
+      "raw_head": "The current time in New York is 10:00 AM on July."
+    },
+    {
+      "idx": 263,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2969,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"今天天气很好\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 264,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 10.3885,
+      "raw_head": "The current time in New York is **UTC** (Eastern Time Zone) in New York is **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time Zone) in **UTC** (Eastern Time "
+    },
+    {
+      "idx": 265,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.3711,
+      "raw_head": "I cannot provide the current exchange rate from USD to EUR or the number of liters in 1000 milliliters. However, I can help you calculate the number of liters in 1000 milliliters if you'd like. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 266,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1005,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 267,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.2912,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"今天天气很好\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 268,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.1874,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 269,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.3563,
+      "raw_head": "I cannot retrieve the latest news about climate change translated into Spanish, check the current weather in Paris converted to EUR or translate text lengths. Please let me know if you'd like me to translate."
+    },
+    {
+      "idx": 270,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.0828,
+      "raw_head": "25 multiplied by 4 and then subtracted by 15, we need to find the result of 25 multiplied by 4 and then subtracted by 15."
+    },
+    {
+      "idx": 271,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.2849,
+      "raw_head": "50公斤等于约6.5磅。"
+    },
+    {
+      "idx": 272,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.4283,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York City\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 273,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.3572,
+      "raw_head": "目前美元对人民币的汇率约为7.2左右，但具体数值可能因市场波动而变化。建议您关注实时汇率，或者关注官方渠道。"
+    },
+    {
+      "idx": 274,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5212,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 50, \"from_unit\": \"kg\", \"to_unit\": \"catty\"}}\n</tool_call>"
+    },
+    {
+      "idx": 275,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.0998,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 276,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5967,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"CNY\", \"to_currency\": \"USD\"}}\n</tool_call>"
+    },
+    {
+      "idx": 277,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.7361,
+      "raw_head": "查询当前时间并计算明天早上8点和现在相差多少小时\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 278,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.1968,
+      "raw_head": "I cannot provide the current weather in Tokyo or the latest weather updates in Tokyo, as these require live data and external sources. However, I can help with other tasks if you'd like. Let me know how I can assist!"
+    },
+    {
+      "idx": 279,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.359,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 280,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4919,
+      "raw_head": "目前，我无法提供实时的市场价格，但可以通过一些在线服务或银行网站了解最新市场动态。"
+    },
+    {
+      "idx": 281,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.849,
+      "raw_head": "I cannot provide the current time in New York or translate it into Spanish as I do not have access to real-time weather data. However, I can help with the translation of the weather forecast for you. Let me know if you'd like help with something else!"
+    },
+    {
+      "idx": 282,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5043,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"miles\", \"to_unit\": \"km\"}}\n</tool_call>"
+    },
+    {
+      "idx": 283,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.1189,
+      "raw_head": "100公里等于约6.22英里。"
+    },
+    {
+      "idx": 284,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 8.6118,
+      "raw_head": "查询北京当前天气并翻译成英文\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天是2023年10月15日，星期二，星期三，星期五，星期六，星期日，星期日，星期一，星期二，星期三，星期四，星期五，星期六，星期日，星期日，星期一，星期二，星期三，星期日，星期一，星期二，星期三，星期日，星期一，星期二，星期二，星期三，星期日，星期一，星期二，星期二，星期三，星期日，星期一，星期二，星期二，星期三，星期日，星期一，星期二，星期二，星期三，星期日，星期一，星期二，星期二，星"
+    },
+    {
+      "idx": 285,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.1301,
+      "raw_head": "10 加 15 等于 25，这是数学运算的结果。"
+    },
+    {
+      "idx": 286,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 3.8194,
+      "raw_head": "目前，根据中国的市场数据，截至2024年，全球美元对美元的预期收益约为7.5%。然而，由于全球疫情的影响，全球美元对美元的预期收益约为1.5%。\n\n因此，该公司在全球范围内拥有数亿美元的市场份额，并在全球范围内拥有数亿美元的股份。"
+    },
+    {
+      "idx": 287,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.8261,
+      "raw_head": "将100公斤转换为磅\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"kg\", \"to_unit\": \"pounds\"}}\n</tool_call>"
+    },
+    {
+      "idx": 288,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.4761,
+      "raw_head": "“你好世界”这句中文的字符数是4，单词数是2。"
+    },
+    {
+      "idx": 289,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 2.0102,
+      "raw_head": "查询北京当前天气并转换摄氏度\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\", \"unit\": \"fahrenheit\"}}\n</tool_call>"
+    },
+    {
+      "idx": 290,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 4.4977,
+      "raw_head": "I cannot determine the average temperature in New York this week or provide the sentence \"What is the average temperature in New York this week and how many words are in this sentence if I add a random number between 1 and 100 to the current time in UTC?\"}}\n\nI need to calculate the average temperature in New York this week and then calculate the average number of words in this sentence if it is.\n\nI cannot determine the average temperature in New York this week or provide the sentence \"What is th"
+    },
+    {
+      "idx": 291,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.7089,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 292,
+      "gold_first_name": "text_length",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "bad_kind": "wrong_first_tool_name",
+      "latency_s": 3.0461,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"CNY\", \"to_currency\": \"USD\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"北京到上海的距离是1200公里\"}}\n</tool_call>"
+    },
+    {
+      "idx": 293,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "bad_kind": "ok",
+      "latency_s": 1.5946,
+      "raw_head": "查询北京当前气温并转换温度到华氏度\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 294,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.1505,
+      "raw_head": "50公斤等于250磅。"
+    },
+    {
+      "idx": 295,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2337,
+      "raw_head": "“今天天气很好”可以翻译成法语是：“Le temps est vraiment bon aujourd'hui？”"
+    },
+    {
+      "idx": 296,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.6696,
+      "raw_head": "I cannot provide the current weather in Paris or London as these tasks require external tools or real-time data access. However, I can help with the conversion formula or calculate the average temperature difference. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 297,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.8634,
+      "raw_head": "I cannot directly access real-time weather data or current weather data, as these require live updates and external tools that I do not have access to. Additionally, I cannot translate text or translate text into Spanish as I do not have access to current weather information or weather reports. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 298,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 2.2541,
+      "raw_head": "I cannot directly fetch the current exchange rate from USD to EUR or translate the exchange rate from Japanese to Japanese, as this requires real-time data and access to financial data. Let me know if you'd like help with something else."
+    },
+    {
+      "idx": 299,
+      "gold_first_name": "text_length",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "bad_kind": "no_tool_call_in_output",
+      "latency_s": 1.6505,
+      "raw_head": "“人工智能的发展对社会的影响”这句话共有10个汉字和5个单词。"
+    }
+  ],
+  "details_truncated": false,
+  "details_total": 300
+}

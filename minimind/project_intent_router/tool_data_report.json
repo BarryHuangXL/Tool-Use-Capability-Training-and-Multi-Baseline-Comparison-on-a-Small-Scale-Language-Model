@@ -1,0 +1,21 @@
+{
+  "input": "D:\\港科课程\\minimind_new\\minimind\\dataset\\sft_t2t_mini.jsonl",
+  "total_lines": 895718,
+  "lines_with_tool_calls": 66574,
+  "ratio": 0.07432473166777936,
+  "unique_tool_names": 10,
+  "tool_name_counts": {
+    "random_number": 10469,
+    "get_current_time": 9960,
+    "calculate_math": 9884,
+    "text_length": 9879,
+    "get_current_weather": 8528,
+    "get_exchange_rate": 8069,
+    "unit_converter": 7834,
+    "translate_text": 6236,
+    "get_news": 1687,
+    "web_search": 1331
+  },
+  "avg_turns_per_tool_conversation": 5.027968876738667,
+  "avg_assistant_tool_call_messages_per_tool_conversation": 1.0139844383693333
+}

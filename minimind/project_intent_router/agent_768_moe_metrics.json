@@ -1,0 +1,817 @@
+{
+  "summary": {
+    "holdout": "D:\\港科课程\\minimind_new\\minimind\\dataset\\tool_eval_holdout.jsonl",
+    "evaluated": 300,
+    "structure_valid_rate": 0.9866666666666667,
+    "first_tool_name_accuracy": 0.9433333333333334,
+    "latency_mean_s": 2.0156715340000013,
+    "latency_p50_s": 1.4852116000000137,
+    "device": "cuda",
+    "max_new_tokens": 256,
+    "temperature": 0.1
+  },
+  "details": [
+    {
+      "idx": 0,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 3.731,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call>"
+    },
+    {
+      "idx": 1,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 3.1736,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"上海\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 2,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 1.1224,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 3,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "latency_s": 1.2349,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"miles\", \"to_unit\": \"km\"}}\n</tool_call>"
+    },
+    {
+      "idx": 4,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "latency_s": 2.9617,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"100 * 1.10\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"EUR\", \"to_currency\": \"USD\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The exchange rate is 1.10 USD per EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 5,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "latency_s": 3.2639,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"1 USD is equivalent to 22 EUR\", \"target_language\": \"japanese\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 1, \"max\": 100}}\n</tool_call>"
+    },
+    {
+      "idx": 6,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 1.0339,
+      "raw_head": "查询当前北京时间\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 7,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 0.8155,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 8,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "latency_s": 1.0059,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"345 + 237 * 1.5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 9,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.7209,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"上海\"}}\n</tool_call>"
+    },
+    {
+      "idx": 10,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "latency_s": 1.2182,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 11,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "latency_s": 2.2597,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"kg\", \"to_unit\": \"pounds\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"web_search\", \"arguments\": {\"query\": \"lestick weight loss in adult health effects\", \"num_results\": 3}}\n</tool_call>"
+    },
+    {
+      "idx": 12,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "latency_s": 1.1913,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 13,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 2.5725,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"What is the length of this sentence in characters and words and what is the result of 25 plus 15 multiplied by 2?\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"What is the length of this sentence in characters and words and what is the result of 25 plus 15 multiplied by 2?\"}}\n</tool_call>"
+    },
+    {
+      "idx": 14,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.4937,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 15,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 3.1433,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Europe/London\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 16,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.605,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 17,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 0.9849,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 18,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.6893,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 19,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 2.7558,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"web_search\", \"arguments\": {\"query\": \"今天上午的空气质量 今天上午\", \"num_results\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"10 + 20 * 3\"}}\n</tool_call>"
+    },
+    {
+      "idx": 20,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 1.0499,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 21,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "latency_s": 2.0888,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"50 * 2.5 + 100\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"50 * 2.5 + 100\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 22,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 5.8986,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Tokyo\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"London\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Tokyo\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"London\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"argumen"
+    },
+    {
+      "idx": 23,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "",
+      "structure_valid": false,
+      "latency_s": 5.8169,
+      "raw_head": "我需要计算每天存200元，年利率3%，到期时总共能有多少钱。这是一个复利问题，但需要明确的是，这类问题通常是由复利计算得出的，而不是单利。不过，我可以先计算一下这个公式，然后再计算总金额。\n\n首先，我需要明确：每天存200元，年利率3%，存期是3年。\n\n每天存200元，年利率3%，存期是3年。\n\n计算公式：\n\n$$\n\\text{存期} = \\text{本金} \\times \\text{年数}\n$$\n\n代入数据：\n\n$$\n200 = 200 \\times \\left(1 + \\frac{3}{100}\\right) \\times \\left(1 + 0.03\\right)\n$$\n\n计算得：\n\n$$\n200 \\times (1.03) \\times (1.03) = 200 \\times 1.03 \\times 0.03 = 110.3\n$$\n\n所以，到期时总共能有 **110."
+    },
+    {
+      "idx": 24,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 1.0585,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"今天天气真好\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 25,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 1.0452,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 26,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "latency_s": 1.2204,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 50, \"from_unit\": \"kg\", \"to_unit\": \"pounds\"}}\n</tool_call>"
+    },
+    {
+      "idx": 27,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 3.5705,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from\": \"JPY\", \"to\": \"EUR\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from\": \"JPY\", \"to\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 28,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 0.9029,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Tokyo\"}}\n</tool_call>"
+    },
+    {
+      "idx": 29,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.086,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 30,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 1.0722,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 31,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "latency_s": 1.2819,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 32,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.8139,
+      "raw_head": "I'll check the current weather in Paris to determine if it's suitable for a picnic. Let me get that information for you.\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 33,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 0.9891,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天天气真好 适合出去散步\"}}\n</tool_call>"
+    },
+    {
+      "idx": 34,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 0.9809,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 35,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 0.9683,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\"}}\n</tool_call>"
+    },
+    {
+      "idx": 36,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.5862,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from\": \"JPY\", \"to\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 37,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 1.0359,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 38,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 1.336,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"请问这段文字有多少个字和词呢 我想看看它的长度是多少 麻烦帮我算一下\"}}\n</tool_call>"
+    },
+    {
+      "idx": 39,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.8348,
+      "raw_head": "查询北京当前天气及温度换算\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 40,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 2.2243,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"明天巴黎的天气预报是多云，气温在15到25摄氏度之间。\", \"target_language\": \"chinese\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 0, \"max\": 30}}\n</tool_call>"
+    },
+    {
+      "idx": 41,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 0.9363,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"How many characters and words are in this sentence?\"}}\n</tool_call>"
+    },
+    {
+      "idx": 42,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 2.0094,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天天气真好 我们一起去公园散步吧\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天天气真好 我们一起去公园散步吧\"}}\n</tool_call>"
+    },
+    {
+      "idx": 43,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 3.9102,
+      "raw_head": "查询北京和上海当前天气及人民币对美元汇率\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"上海\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"CNY\", \"to_currency\": \"USD\"}}\n</tool_call>"
+    },
+    {
+      "idx": 44,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 3.6369,
+      "raw_head": "查询北京当前天气及人民币对美元汇率\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\", \"unit\": \"fahrenheit\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"CNY\", \"to_currency\": \"USD\"}}\n</tool_call>"
+    },
+    {
+      "idx": 45,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 0.8393,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 46,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 1.0987,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"spanish\"}}\n</tool_call>"
+    },
+    {
+      "idx": 47,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 2.1869,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"Artificial intelligence is transforming the way we live and work. It enables machines to perform tasks that typically require human intelligence, such as learning, reasoning, problem-solving, and problem-solving.\", \"target_language\": \"chinese\"}}\n</tool_call>"
+    },
+    {
+      "idx": 48,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 1.0407,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog\"}}\n</tool_call>"
+    },
+    {
+      "idx": 49,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 1.4635,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"The quick brown fox jumps over the lazy dog.\", \"target_language\": \"chinese\"}}\n</tool_call>"
+    },
+    {
+      "idx": 50,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.9984,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"CNY\", \"to_currency\": \"USD\"}}\n</tool_call>"
+    },
+    {
+      "idx": 51,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 4.1306,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"New York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"New York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 52,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "web_search",
+      "structure_valid": true,
+      "latency_s": 2.3463,
+      "raw_head": "<tool_call>\n{\"name\": \"web_search\", \"arguments\": {\"query\": \"比特币最近行情\", \"num_results\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"BTC\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 53,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.0029,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 54,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 3.3574,
+      "raw_head": "查询当前时间及北京上海天气情况\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"上海\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 55,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 3.1258,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"London\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"London\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 56,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 1.143,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"spanish\"}}\n</tool_call>"
+    },
+    {
+      "idx": 57,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 3.3534,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 58,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 0.8469,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 59,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 3.34,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"What is the current time and what is the exchange rate between USD and EUR today also can you tell me the character count of this sentence?\"}}\n</tool_call>"
+    },
+    {
+      "idx": 60,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 0.9313,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 61,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 0.8608,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 62,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 1.0768,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"spanish\"}}\n</tool_call>"
+    },
+    {
+      "idx": 63,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "latency_s": 1.2618,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>"
+    },
+    {
+      "idx": 64,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.3801,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 65,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 4.1493,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"上海\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"city\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from\": \"CNY\", \"to\": \"USD\"}}\n</tool_call>"
+    },
+    {
+      "idx": 66,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.9982,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"CNY\", \"to_currency\": \"JPY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 67,
+      "gold_first_name": "text_length",
+      "pred_first_name": "text_length",
+      "structure_valid": true,
+      "latency_s": 0.7709,
+      "raw_head": "<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"今天北京的天气如何\"}}\n</tool_call>"
+    },
+    {
+      "idx": 68,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.1895,
+      "raw_head": "查询北京当前天气并计算文字字数\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"北京现在的天气怎么样 顺便帮我算一下我写的这段文字有多少个字\"}}\n</tool_call>"
+    },
+    {
+      "idx": 69,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "latency_s": 1.2823,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 70,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "latency_s": 0.8671,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"5*4+10\"}}\n</tool_call>"
+    },
+    {
+      "idx": 71,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "latency_s": 2.2963,
+      "raw_head": "I need to convert 25 degrees Celsius to Fahrenheit. I'll use the formula: °F = (°C × 9/5) + 32.\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 25, \"from_unit\": \"celsius\", \"to_unit\": \"fahrenheit\"}}\n</tool_call>"
+    },
+    {
+      "idx": 72,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.7717,
+      "raw_head": "查询今天北京的天气情况\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 73,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.2358,
+      "raw_head": "查询北京当前天气及温度和湿度数据\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 74,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 2.5775,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"Can you translate this sentence from English to French and also tell me how many words it contains?\", \"target_language\": \"french\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"Can you translate this sentence from English to French and also tell me how many words it contains?\"}}\n</tool_call>"
+    },
+    {
+      "idx": 75,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 1.844,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 - 15\"}}\n</tool_call>"
+    },
+    {
+      "idx": 76,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "latency_s": 0.8766,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"7\"}}\n</tool_call>"
+    },
+    {
+      "idx": 77,
+      "gold_first_name": "translate_text",
+      "pred_first_name": "translate_text",
+      "structure_valid": true,
+      "latency_s": 1.1227,
+      "raw_head": "<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"good morning\", \"target_language\": \"french\"}}\n</tool_call>"
+    },
+    {
+      "idx": 78,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.5671,
+      "raw_head": "查询北京天气、统计字符数、生成随机数并计算心情指数\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"晴\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 1, \"max\": 100}}\n</tool_call>"
+    },
+    {
+      "idx": 79,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 2.0306,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"text_length\", \"arguments\": {\"text\": \"现在的时间是多少 以及我刚刚写的一段文字有多少个字符和单词\"}}\n</tool_call>"
+    },
+    {
+      "idx": 80,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.1417,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\", \"unit\": \"celsius\"}}\n</tool_call>"
+    },
+    {
+      "idx": 81,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 0.9493,
+      "raw_head": "查询北京当前天气状况\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>"
+    },
+    {
+      "idx": 82,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 0.8341,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 83,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "latency_s": 1.2863,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 84,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "latency_s": 0.8848,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"3 * 4 + 5 ** 2\"}}\n</tool_call>"
+    },
+    {
+      "idx": 85,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.2732,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Tokyo\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"JPY\", \"to_currency\": \"USD\"}}\n</tool_call>"
+    },
+    {
+      "idx": 86,
+      "gold_first_name": "calculate_math",
+      "pred_first_name": "calculate_math",
+      "structure_valid": true,
+      "latency_s": 1.0039,
+      "raw_head": "<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"10 * 2.5 - 3\"}}\n</tool_call>"
+    },
+    {
+      "idx": 87,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 1.8184,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 + 15 * 2\"}}\n</tool_call>"
+    },
+    {
+      "idx": 88,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "web_search",
+      "structure_valid": true,
+      "latency_s": 5.8476,
+      "raw_head": "查询最新气候新闻、计算温室气体排放、获取美元对人民币汇率及天气\n<tool_call>\n{\"name\": \"web_search\", \"arguments\": {\"query\": \"气候变化 最新新闻\", \"num_results\": 3}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Beijing\", \"unit\": \"celsius\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>\n<tool_call>\n{\"name\""
+    },
+    {
+      "idx": 89,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.5927,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"Paris\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 0, \"max\": 100}}\n</tool_call>"
+    },
+    {
+      "idx": 90,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "latency_s": 3.3519,
+      "raw_head": "<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 200, \"from_unit\": \"liters\", \"to_unit\": \"gallon\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"2000 / 8\"}}\n</tool_call>"
+    },
+    {
+      "idx": 91,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.3969,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"random_number\", \"arguments\": {\"min\": 0, \"max\": 100}}\n</tool_call>"
+    },
+    {
+      "idx": 92,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 1.028,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    },
+    {
+      "idx": 93,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 1.0641,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>"
+    },
+    {
+      "idx": 94,
+      "gold_first_name": "get_exchange_rate",
+      "pred_first_name": "get_exchange_rate",
+      "structure_valid": true,
+      "latency_s": 1.4852,
+      "raw_head": "查询当前美元对人民币的汇率\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"CNY\"}}\n</tool_call>"
+    },
+    {
+      "idx": 95,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 3.3717,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"America/New_York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_exchange_rate\", \"arguments\": {\"from_currency\": \"USD\", \"to_currency\": \"EUR\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 50, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 96,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 1.8459,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"calculate_math\", \"arguments\": {\"expression\": \"25 + 32 * 9/5\"}}\n</tool_call>"
+    },
+    {
+      "idx": 97,
+      "gold_first_name": "get_current_weather",
+      "pred_first_name": "get_current_weather",
+      "structure_valid": true,
+      "latency_s": 2.4832,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_current_weather\", \"arguments\": {\"location\": \"北京\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"web_search\", \"arguments\": {\"query\": \"最新科技新闻\"}}\n</tool_call>"
+    },
+    {
+      "idx": 98,
+      "gold_first_name": "unit_converter",
+      "pred_first_name": "unit_converter",
+      "structure_valid": true,
+      "latency_s": 1.2775,
+      "raw_head": "<tool_call>\n{\"name\": \"unit_converter\", \"arguments\": {\"value\": 100, \"from_unit\": \"km\", \"to_unit\": \"miles\"}}\n</tool_call>"
+    },
+    {
+      "idx": 99,
+      "gold_first_name": "get_current_time",
+      "pred_first_name": "get_current_time",
+      "structure_valid": true,
+      "latency_s": 0.974,
+      "raw_head": "<tool_call>\n{\"name\": \"get_current_time\", \"arguments\": {\"timezone\": \"Asia/Shanghai\"}}\n</tool_call>"
+    }
+  ],
+  "details_truncated": true,
+  "details_total": 300
+}

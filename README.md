@@ -1,5 +1,5 @@
 # MiniMind Tool-Use Training & Evaluation Project
-
+HKUST MSBD6910
 > A complete small-scale LLM post-training pipeline built from scratch, covering pretraining, SFT, DPO, RLAIF, and Agent RL. Specializing in tool-calling (Function Calling) capability with multi-baseline comparison and improved evaluation metrics.
 
 ---

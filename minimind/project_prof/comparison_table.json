@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "file": "D:\\港科课程\\minimind_new\\minimind\\project_intent_router\\full_sft_768_metrics.json",
+      "holdout": "D:\\港科课程\\minimind_new\\minimind\\dataset\\tool_eval_holdout.jsonl",
+      "evaluated": 300,
+      "structure_valid_rate": 0.5466666666666666,
+      "first_tool_name_accuracy": 0.5,
+      "latency_mean_s": 1.0907977296666678,
+      "latency_p50_s": 0.8598103999999864,
+      "device": "cuda",
+      "max_new_tokens": 256,
+      "temperature": 0.1
+    },
+    {
+      "file": "D:\\港科课程\\minimind_new\\minimind\\project_intent_router\\full_sft_768_moe_metrics.json",
+      "holdout": "D:\\港科课程\\minimind_new\\minimind\\dataset\\tool_eval_holdout.jsonl",
+      "evaluated": 300,
+      "structure_valid_rate": 0.9533333333333334,
+      "first_tool_name_accuracy": 0.93,
+      "latency_mean_s": 1.8945312783333297,
+      "latency_p50_s": 1.4875534000000243,
+      "device": "cuda",
+      "max_new_tokens": 256,
+      "temperature": 0.1
+    },
+    {
+      "file": "D:\\港科课程\\minimind_new\\minimind\\project_intent_router\\agent_768_metrics.json",
+      "holdout": "D:\\港科课程\\minimind_new\\minimind\\dataset\\tool_eval_holdout.jsonl",
+      "evaluated": 300,
+      "structure_valid_rate": 0.9933333333333333,
+      "first_tool_name_accuracy": 0.9466666666666667,
+      "latency_mean_s": 1.2690319893333342,
+      "latency_p50_s": 0.993321299999991,
+      "device": "cuda",
+      "max_new_tokens": 256,
+      "temperature": 0.1,
+      "bad_cases_file": "D:\\港科课程\\minimind_new\\minimind\\project_intent_router\\agent_768_bad_cases.jsonl"
+    },
+    {
+      "file": "D:\\港科课程\\minimind_new\\minimind\\project_intent_router\\agent_768_moe_metrics.json",
+      "holdout": "D:\\港科课程\\minimind_new\\minimind\\dataset\\tool_eval_holdout.jsonl",
+      "evaluated": 300,
+      "structure_valid_rate": 0.9866666666666667,
+      "first_tool_name_accuracy": 0.9433333333333334,
+      "latency_mean_s": 2.0156715340000013,
+      "latency_p50_s": 1.4852116000000137,
+      "device": "cuda",
+      "max_new_tokens": 256,
+      "temperature": 0.1
+    },
+    {
+      "file": "D:\\港科课程\\minimind_new\\minimind\\project_prof\\metrics_hf_qwen_sft.json",
+      "backend": "hf_causal_lm",
+      "model_name_or_path": "out_hf_sft_qwen05",
+      "holdout": "D:\\港科课程\\minimind_new\\minimind\\dataset\\tool_eval_holdout.jsonl",
+      "evaluated": 300,
+      "structure_valid_rate": 0.8366666666666667,
+      "first_tool_name_accuracy": 0.81,
+      "latency_mean_s": 2.8521128846666657,
+      "latency_p50_s": 2.478291499999955
+    },
+    {
+      "file": "D:\\港科课程\\minimind_new\\minimind\\project_prof\\metrics_api_qwen.json",
+      "backend": "openai_compatible_api",
+      "api_model": "qwen-turbo",
+      "api_base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "holdout": "D:\\港科课程\\minimind_new\\minimind\\dataset\\tool_eval_holdout.jsonl",
+      "evaluated": 300,
+      "structure_valid_rate": 0.9033333333333333,
+      "first_tool_name_accuracy": 0.8,
+      "latency_mean_s": 0.8226346180000004,
+      "two_round_agent": false
+    }
+  ]
+}

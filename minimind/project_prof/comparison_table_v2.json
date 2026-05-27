@@ -1,0 +1,361 @@
+{
+  "version": "v2",
+  "description": "Improved metrics: overall_f1, exact_match_rate, tool_name_f1, args_f1",
+  "rows": [
+    {
+      "name": "MiniMind SFT (Dense)",
+      "evaluated": 300,
+      "structure_valid_rate": 0.56,
+      "first_tool_name_accuracy": 0.5133333333333333,
+      "tool_name_precision": 0.54,
+      "tool_name_recall": 0.5108333333333334,
+      "tool_name_f1": 0.5177777777777778,
+      "args_precision": 0.4780555555555555,
+      "args_recall": 0.4516111111111111,
+      "args_f1": 0.4525634920634921,
+      "overall_f1": 0.46256381744617037,
+      "exact_match_rate": 0.39,
+      "latency_mean_s": 2.351569350332332,
+      "bad_kind_distribution_v2": {
+        "no_tool_call_in_output": 132,
+        "missing_required_tools": 14,
+        "wrong_args_only": 23,
+        "wrong_first_and_missing": 8,
+        "all_tools_wrong": 3,
+        "wrong_first_but_others_ok": 3
+      },
+      "bad_cases_total": 183
+    },
+    {
+      "name": "MiniMind SFT + MoE",
+      "evaluated": 100,
+      "structure_valid_rate": 0.95,
+      "first_tool_name_accuracy": 0.91,
+      "tool_name_precision": 0.905,
+      "tool_name_recall": 0.9033333333333333,
+      "tool_name_f1": 0.8956666666666666,
+      "args_precision": 0.8599285714285715,
+      "args_recall": 0.8556666666666666,
+      "args_f1": 0.8467619047619047,
+      "overall_f1": 0.8530961731529684,
+      "exact_match_rate": 0.73,
+      "latency_mean_s": 1.8945312783333297,
+      "bad_kind_distribution_v2": {
+        "wrong_first_but_others_ok": 1,
+        "wrong_args_only": 13,
+        "no_tool_call_in_output": 5,
+        "wrong_first_and_missing": 1,
+        "missing_required_tools": 5,
+        "all_tools_wrong": 2
+      },
+      "bad_cases_total": 27
+    },
+    {
+      "name": "MiniMind Agent RL (Dense)",
+      "evaluated": 300,
+      "structure_valid_rate": 0.9933333333333333,
+      "first_tool_name_accuracy": 0.9466666666666667,
+      "tool_name_precision": 0.9066666666666666,
+      "tool_name_recall": 0.9616666666666667,
+      "tool_name_f1": 0.9204920634920636,
+      "args_precision": 0.7421441798941799,
+      "args_recall": 0.8696666666666666,
+      "args_f1": 0.7769700484700485,
+      "overall_f1": 0.812034806706352,
+      "exact_match_rate": 0.5633333333333334,
+      "latency_mean_s": 5.773358681332902,
+      "bad_kind_distribution_v2": {
+        "wrong_args_only": 107,
+        "wrong_first_but_others_ok": 6,
+        "missing_required_tools": 8,
+        "no_tool_call_in_output": 2,
+        "all_tools_wrong": 5,
+        "wrong_first_and_missing": 3
+      },
+      "bad_cases_total": 131,
+      "bad_case_stats": {
+        "kind_distribution": {
+          "wrong_first_tool_name": 14,
+          "no_tool_call_in_output": 1
+        },
+        "top_name_confusions": [
+          [
+            [
+              "(none)",
+              "get_exchange_rate"
+            ],
+            3
+          ],
+          [
+            [
+              "(none)",
+              "text_length"
+            ],
+            3
+          ],
+          [
+            [
+              "(none)",
+              "translate_text"
+            ],
+            3
+          ],
+          [
+            [
+              "(none)",
+              "calculate_math"
+            ],
+            2
+          ],
+          [
+            [
+              "(none)",
+              "unit_converter"
+            ],
+            2
+          ],
+          [
+            [
+              "(none)",
+              "get_current_time"
+            ],
+            1
+          ]
+        ],
+        "missing_tools": {
+          "calculate_math": 3,
+          "get_current_weather": 2,
+          "get_exchange_rate": 4,
+          "text_length": 4,
+          "unit_converter": 2,
+          "translate_text": 3,
+          "get_current_time": 1
+        },
+        "extra_tools": {}
+      }
+    },
+    {
+      "name": "MiniMind Agent + MoE",
+      "evaluated": 100,
+      "structure_valid_rate": 0.99,
+      "first_tool_name_accuracy": 0.93,
+      "tool_name_precision": 0.905,
+      "tool_name_recall": 0.93,
+      "tool_name_f1": 0.8943333333333334,
+      "args_precision": 0.7371666666666666,
+      "args_recall": 0.8348333333333333,
+      "args_f1": 0.7608015873015873,
+      "overall_f1": 0.7912566068144161,
+      "exact_match_rate": 0.54,
+      "latency_mean_s": 2.0156715340000013,
+      "bad_kind_distribution_v2": {
+        "wrong_args_only": 30,
+        "missing_required_tools": 9,
+        "wrong_first_but_others_ok": 4,
+        "wrong_first_and_missing": 1,
+        "no_tool_call_in_output": 1,
+        "all_tools_wrong": 1
+      },
+      "bad_cases_total": 46
+    },
+    {
+      "name": "HF Qwen-0.5B SFT",
+      "evaluated": 300,
+      "structure_valid_rate": 0.8333333333333334,
+      "first_tool_name_accuracy": 0.8066666666666666,
+      "tool_name_precision": 0.815,
+      "tool_name_recall": 0.8083333333333333,
+      "tool_name_f1": 0.8083333333333333,
+      "args_precision": 0.7842222222222223,
+      "args_recall": 0.777888888888889,
+      "args_f1": 0.778047619047619,
+      "overall_f1": 0.7828877397112691,
+      "exact_match_rate": 0.74,
+      "latency_mean_s": 2.8521128846666657,
+      "bad_kind_distribution_v2": {
+        "no_tool_call_in_output": 50,
+        "missing_required_tools": 4,
+        "wrong_first_and_missing": 5,
+        "wrong_args_only": 16,
+        "all_tools_wrong": 3
+      },
+      "bad_cases_total": 78,
+      "bad_case_stats": {
+        "kind_distribution": {
+          "no_tool_call_in_output": 49,
+          "wrong_first_tool_name": 8
+        },
+        "top_name_confusions": [
+          [
+            [
+              "(none)",
+              "get_current_time"
+            ],
+            3
+          ],
+          [
+            [
+              "(none)",
+              "get_current_weather"
+            ],
+            2
+          ],
+          [
+            [
+              "(none)",
+              "get_exchange_rate"
+            ],
+            1
+          ],
+          [
+            [
+              "(none)",
+              "calculate_math"
+            ],
+            1
+          ],
+          [
+            [
+              "(none)",
+              "unit_converter"
+            ],
+            1
+          ]
+        ],
+        "missing_tools": {
+          "get_current_weather": 30,
+          "text_length": 5,
+          "get_exchange_rate": 11,
+          "calculate_math": 10,
+          "unit_converter": 4,
+          "get_current_time": 10,
+          "translate_text": 4
+        },
+        "extra_tools": {}
+      }
+    },
+    {
+      "name": "API qwen-turbo",
+      "evaluated": 300,
+      "structure_valid_rate": 0.9166666666666666,
+      "first_tool_name_accuracy": 0.81,
+      "tool_name_precision": 0.7967222222222222,
+      "tool_name_recall": 0.825,
+      "tool_name_f1": 0.7997777777777778,
+      "args_precision": 0.6642301587301588,
+      "args_recall": 0.6949166666666666,
+      "args_f1": 0.665760101010101,
+      "overall_f1": 0.6845258486193754,
+      "exact_match_rate": 0.52,
+      "latency_mean_s": 0.8419574819978637,
+      "bad_kind_distribution_v2": {
+        "no_tool_call_in_output": 25,
+        "all_tools_wrong": 21,
+        "wrong_args_only": 81,
+        "wrong_first_and_missing": 8,
+        "missing_required_tools": 6,
+        "wrong_first_but_others_ok": 3
+      },
+      "bad_cases_total": 144,
+      "bad_case_stats": {
+        "kind_distribution": {
+          "no_tool_call_in_output": 25,
+          "wrong_first_tool_name": 32
+        },
+        "top_name_confusions": [
+          [
+            [
+              "web_search",
+              "get_current_weather"
+            ],
+            14
+          ],
+          [
+            [
+              "get_exchange_rate",
+              "get_current_weather"
+            ],
+            3
+          ],
+          [
+            [
+              "unit_converter",
+              "get_current_weather"
+            ],
+            3
+          ],
+          [
+            [
+              "calculate_math",
+              "get_current_weather"
+            ],
+            3
+          ],
+          [
+            [
+              "text_length",
+              "get_current_weather"
+            ],
+            2
+          ],
+          [
+            [
+              "web_search",
+              "calculate_math"
+            ],
+            1
+          ],
+          [
+            [
+              "get_current_time",
+              "get_current_weather"
+            ],
+            1
+          ],
+          [
+            [
+              "translate_text",
+              "get_current_weather"
+            ],
+            1
+          ],
+          [
+            [
+              "web_search",
+              "get_exchange_rate"
+            ],
+            1
+          ],
+          [
+            [
+              "get_current_weather",
+              "get_exchange_rate"
+            ],
+            1
+          ]
+        ],
+        "missing_tools": {
+          "get_current_weather": 39,
+          "get_exchange_rate": 8,
+          "calculate_math": 3,
+          "translate_text": 10,
+          "unit_converter": 3,
+          "get_current_time": 2
+        },
+        "extra_tools": {
+          "web_search": 16,
+          "get_current_time": 1,
+          "translate_text": 4,
+          "random_number": 4,
+          "unit_converter": 5,
+          "get_current_weather": 1,
+          "calculate_math": 1,
+          "text_length": 3,
+          "get_exchange_rate": 2,
+          "get_latest_news": 1,
+          "get_news": 1
+        }
+      }
+    }
+  ]
+}
